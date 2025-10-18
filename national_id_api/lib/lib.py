@@ -171,8 +171,3 @@ def get_national_id_info(national_id: str) -> dict:
         "age": age
     }
 
-
-if __name__ == "__main__":
-    sample_national_id = input("Enter Egyptian National ID number: ")
-    info = get_national_id_info(sample_national_id)
-    pprint(info)
