@@ -1,8 +1,7 @@
 from datetime import datetime, date
 import re
-from pprint import pprint
 
-from consts import governorate_codes
+from .consts import governorate_codes
 
 def get_birth_governorate_name(code: str) -> str:
     
