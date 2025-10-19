@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'national_id_info.apps.NationalIdInfoConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'national_id_api.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '1/second',
+        'user': '10/second'
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
